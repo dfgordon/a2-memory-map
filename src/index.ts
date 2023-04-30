@@ -11,7 +11,19 @@ export interface AddressInfo {
 }
 
 export function get_all(): Map<string, AddressInfo> {
-    return Object(memmap);
+    let m = new Map<string, AddressInfo>();
+    for (const [key, obj] of Object.entries(memmap)) {
+        m.set(key, {
+            brief: 'brief' in obj ? obj.brief : undefined,
+            ctx: 'ctx' in obj ? obj.ctx : undefined,
+            desc: obj.desc,
+            label: 'label' in obj ? obj.label : undefined,
+            note: 'note' in obj ? obj.note : undefined,
+            subctx: 'subctx' in obj ? obj.subctx : undefined,
+            type: obj.type
+        });
+    }
+    return m;
 }
 
 export function get_one(addr: number): AddressInfo | undefined {
