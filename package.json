@@ -1,0 +1,30 @@
+{
+  "name": "@dfgordon/a2-memory-map",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "version": "1.0.0",
+  "description": "Database of Apple II memory addresses",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "tsc"
+  },
+  "keywords": [
+    "retro",
+    "apple"
+  ],
+  "author": "Daniel Gordon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dfgordon/a2-memory-map/issues"
+  },
+  "homepage": "https://github.com/dfgordon/a2-memory-map#readme",
+  "devDependencies": {
+    "@types/node": "^18.16.3",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.0.4"
+  },
+  "build": "rimraf ./build && tsc"
+}
