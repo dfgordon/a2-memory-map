@@ -1,13 +1,10 @@
 {
   "name": "@dfgordon/a2-memory-map",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dfgordon/a2-memory-map.git"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Database of Apple II memory addresses",
   "main": "build/index.js",
   "types": "build/index.d.ts",
