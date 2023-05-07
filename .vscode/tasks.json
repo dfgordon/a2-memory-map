@@ -9,6 +9,16 @@
 			],
 			"group": "build",
 			"label": "tsc: build - tsconfig.json"
+		},
+		{
+			"type": "npm",
+			"script": "test-compile",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": "$tsc",
+			"label": "npm: test-compile"
 		}
 	]
 }

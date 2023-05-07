@@ -450,8 +450,8 @@
     },
     "0x00e4": {
         "ctx": "Applesoft | Integer BASIC",
-        "desc": "color masking word | line number address",
-        "type": "byte value"
+        "desc": "color masking byte | line number address",
+        "type": "byte value | word"
     },
     "0x00e5": {
         "ctx": "Applesoft",
@@ -502,7 +502,7 @@
         "ctx": "Applesoft | Integer BASIC",
         "desc": "Stack pointer prior to current statement execution | Floating point register 1",
         "label": "REMSTK | FP1",
-        "type": "float32"
+        "type": "byte value | float32"
     },
     "0x00f9": {
         "ctx": "Applesoft",
