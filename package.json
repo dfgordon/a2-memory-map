@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/dfgordon/a2-memory-map.git"
   },
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Database of Apple II memory addresses",
   "main": "build/index.js",
   "types": "build/index.d.ts",

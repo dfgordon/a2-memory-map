@@ -2,11 +2,11 @@
 
 ![unit tests](https://github.com/dfgordon/a2-memory-map/actions/workflows/node.js.yml/badge.svg)
 
-This is a database of Apple II special addresses intended to be used with language servers.  The central element is the file `map.json` which maps addresses to a set of descriptive strings.
+This is the TypeScript binding to a database of Apple II special addresses intended to be used with language servers.  The central element is the file `map.json` which maps addresses to a set of descriptive strings.
 
-## TypeScript Interface
+## Map Records
 
-There is a [node package](https://www.npmjs.com/package/a2-memory-map) that can be used to access the data.  The map records correspond to the interface
+The map records correspond to the interface
 
 ```ts
 interface AddressInfo {
@@ -32,7 +32,7 @@ To get a single record use
 get_one(addr: number): AddressInfo | undefined
 ```
 
-The argument `addr` can range from -32767 to 65535.  As an example `get_info(0xfded)` will give
+The argument `addr` can range from -32767 to 65535.  As an example `get_one(0xfded)` will give
 
 ```js
 {
@@ -62,11 +62,3 @@ get_one_and_split(addr: number): Array<AddressInfo> | undefined
 ```
 
 If there is no splitting of the `ctx` field, no other fields will be split.  It is not required to use this function.  If `get_one` is used instead, downstream will receive the logic expressions, which can be parsed in any manner desired.
-
-## References
-
-Apple's own documentation is a good starting point.  The "Apple IIe Reference Manual" has low level information.  The "Applesoft BASIC Programmer's Reference Manual" provides a chapter "Pokes, Peeks, and Calls" with information especially useful to BASIC programmers.
-
-"All About Applesoft" from [Call-A.P.P.L.E.](https://www.callapple.org/) has a more in depth treatment.
-
-Sometimes an ambiguity is best resolved by studying the relevant disassembly.
