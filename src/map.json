@@ -2305,7 +2305,8 @@
         "type": "ROM routine"
     },
     "0xfd0c": {
-        "desc": "Wait for any keypress.",
+        "brief": "Get input character into A.",
+        "desc": "Invoke input routine whose address is in (58).  Usually sets A to keypress value.",
         "label": "RDKEY",
         "type": "ROM routine"
     },

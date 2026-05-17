@@ -1,7 +1,7 @@
 [package]
 name = "a2-memory-map"
 description = "Database of Apple II memory addresses"
-version = "1.0.4"
+version = "1.0.5"
 keywords = ["retro", "apple"]
 categories = []
 repository = "https://github.com/dfgordon/a2-memory-map"
