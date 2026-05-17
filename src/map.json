@@ -2306,7 +2306,7 @@
     },
     "0xfd0c": {
         "brief": "Get input character into A.",
-        "desc": "Invoke input routine whose address is in (58).  Usually sets A to keypress value.",
+        "desc": "Invoke input routine whose address is in (56).  Usually sets A to keypress value.",
         "label": "RDKEY",
         "type": "ROM routine"
     },
@@ -2321,13 +2321,14 @@
         "type": "ROM routine"
     },
     "0xfd6a": {
-        "desc": "Input a record.",
+        "brief": "Get a line with prompt.",
+        "desc": "Display prompt and get text terminated by CR while handling escape sequences.  Result in page 2.",
         "label": "GETLN",
         "type": "ROM routine"
     },
     "0xfd6f": {
-        "brief": "Input without parsing `,` or `:`",
-        "desc": "Similar to `INPUT` but without parsing commas or colons, data left in page 2 buffer.",
+        "brief": "Get a line without prompt.",
+        "desc": "Get text terminated by CR while handling escape sequences.  Result in page 2.",
         "type": "ROM routine"
     },
     "0xfdda": {
@@ -2337,7 +2338,7 @@
     },
     "0xfded": {
         "brief": "Print character in A",
-        "desc": "Invoke output routine whose address is in (56).  Usually prints character in A.",
+        "desc": "Invoke output routine whose address is in (54).  Usually prints character in A.",
         "label": "COUT",
         "type": "ROM routine"
     },

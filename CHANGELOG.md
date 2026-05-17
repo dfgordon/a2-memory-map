@@ -10,7 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Fixes
 
 * Update development dependencies
-* Update entries: RDKEY
+* Update entries: COUT,RDKEY,GETLN
 
 ## [1.0.4] - 2024-05-17
 
