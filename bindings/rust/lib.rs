@@ -64,6 +64,9 @@ impl MemoryMap {
         let temp = serde_json::from_str::<serde_json::Value>(JSON_MAP).unwrap();
         if let Some(obj) = temp.as_object() {
             for (key,val) in obj {
+                if key.as_str() == "$schema" {
+                    continue;
+                }
                 let addr  = u16::from_str_radix(&key[2..],16).expect("bad address in memory map");
                 let addr_info = AddressInfo {
                     brief: get_val("brief",val),
