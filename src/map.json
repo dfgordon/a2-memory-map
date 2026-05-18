@@ -996,7 +996,7 @@
     },
     "0xc05e": {
         "brief": "game 3 off | double hi-res",
-        "ctx": "Enhanced Apple //e or later needed for [2]",
+        "ctx": "Enhanced Apple //e or higher needed for [2]",
         "desc": "Overloaded. [1] set game control annunciator output 3 to high (off) [2] switch to double resolution graphics",
         "label": "DHR",
         "type": "soft switch"

@@ -8,16 +8,6 @@ on:
 
 jobs:
 
-  validate-json-schema:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-      - name: validate JSON
-        uses: docker://orrosenblatt/validate-json-action:latest
-        env:
-          INPUT_SCHEMA: src/map.schema.json
-          INPUT_JSONS: src/map.json
-
   build:
     runs-on: ubuntu-latest
 

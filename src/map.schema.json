@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://github.com/dfgordon/a2-memory-map/src/map.schema.json",
     "title": "Apple II Memory Map",
     "description": "Database of important addresses for Apple II programming",
@@ -15,7 +15,8 @@
                     "type": "string"
                 },
                 "ctx": {
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "^(Applesoft|Monitor|Integer BASIC|DOS 3.3|ProDOS|Enhanced Apple //e or higher( needed for \\[[0-9]\\])?)(\\s*[|&]\\s*(Applesoft|Monitor|Integer BASIC|DOS 3.3|ProDOS|Enhanced Apple //e or higher( needed for \\[[0-9]\\])?))*$"
                 },
                 "subctx": {
                     "type": "string",

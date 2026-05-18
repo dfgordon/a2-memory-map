@@ -45,15 +45,17 @@ function get_contextual_info(info: AddressInfo, count: number): AddressInfo {
 export function get_all(): Map<string, AddressInfo> {
     let m = new Map<string, AddressInfo>();
     for (const [key, obj] of Object.entries(memmap)) {
-        m.set(key, {
-            brief: 'brief' in obj ? obj.brief : undefined,
-            ctx: 'ctx' in obj ? obj.ctx : undefined,
-            desc: obj.desc,
-            label: 'label' in obj ? obj.label : undefined,
-            note: 'note' in obj ? obj.note : undefined,
-            subctx: 'subctx' in obj ? obj.subctx : undefined,
-            type: obj.type
-        });
+        if (obj instanceof Object) {
+            m.set(key, {
+                brief: 'brief' in obj ? obj.brief : undefined,
+                ctx: 'ctx' in obj ? obj.ctx : undefined,
+                desc: obj.desc,
+                label: 'label' in obj ? obj.label : undefined,
+                note: 'note' in obj ? obj.note : undefined,
+                subctx: 'subctx' in obj ? obj.subctx : undefined,
+                type: obj.type
+            });
+        }
     }
     return m;
 }
