@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 * Update development dependencies
 * Update entries: COUT,RDKEY,GETLN
+* Provide JSON schema for the map
 
 ## [1.0.4] - 2024-05-17
 

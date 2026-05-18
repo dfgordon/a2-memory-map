@@ -1,0 +1,38 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/dfgordon/a2-memory-map/src/map.schema.json",
+    "title": "Apple II Memory Map",
+    "description": "Database of important addresses for Apple II programming",
+    "type": "object",
+    "patternProperties": {
+        "^0x[0-9a-fA-F]{4}$": {
+            "type": "object",
+            "properties": {
+                "brief": {
+                    "type": "string"
+                },
+                "desc": {
+                    "type": "string"
+                },
+                "ctx": {
+                    "type": "string"
+                },
+                "subctx": {
+                    "type": "string",
+                    "pattern": "^(io|FP|string|parsing|hi-res|variables)(\\s*[|&]\\s*(io|FP|string|parsing|hi-res|variables))*$"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "pattern": "^(byte value|word|vector|float32|float|unpacked float|ZP routine|DOS routine|ROM routine|soft switch)(\\s*[|&]\\s*(byte value|word|vector|float32|float|unpacked float|ZP routine|ROM routine|soft switch))*$"
+                }
+            },
+            "required": [
+                "desc",
+                "type"
+            ]
+        }
+    }
+}

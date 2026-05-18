@@ -2,13 +2,22 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  build:
 
+  validate-json-schema:
+    runs-on: ubuntu-latest
+    steps:
+      - name: validate
+        uses: dsanders11/json-schema-validate-action@v2.0.0
+        with:
+          schema: ./src/map.schema.json
+          files: ./src/map.json
+
+  build:
     runs-on: ubuntu-latest
 
     strategy:
@@ -16,12 +25,12 @@ jobs:
         node-version: [24.x]
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v5
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install --include=dev
-    - run: npm run test-compile
-    - run: npm test
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install --include=dev
+      - run: npm run test-compile
+      - run: npm test
