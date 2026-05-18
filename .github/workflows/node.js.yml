@@ -11,11 +11,12 @@ jobs:
   validate-json-schema:
     runs-on: ubuntu-latest
     steps:
-      - name: validate
-        uses: dsanders11/json-schema-validate-action@v2.0.0
-        with:
-          schema: src/map.schema.json
-          files: src/map.json
+      - uses: actions/checkout@v5
+      - name: validate JSON
+        uses: docker://orrosenblatt/validate-json-action:latest
+        env:
+          INPUT_SCHEMA: src/map.schema.json
+          INPUT_JSONS: src/map.json
 
   build:
     runs-on: ubuntu-latest
@@ -28,7 +29,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install --include=dev
